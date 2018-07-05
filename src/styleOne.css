@@ -2,16 +2,6 @@ body {
     background-color: #300000
 }
 
-h1 {
-    color: navy;
-    margin: 20px;
-}
-
-p {
-    color: grey;
-    margin: 10px;
-}
-
 @media (min-width: 500px) {
     body {
         background-color: salmon;
