@@ -9,8 +9,30 @@
 		<script src="js/bootstrap.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script>
-			function setURL(url){
-    			document.getElementById('siteView').src = url;
+			var sites = ["siteOne", "siteTwo", "siteThree", "siteFour", "siteFive", "siteSix"];
+			var siteLinks = ["https://minecraftservers.org/vote/426251#left", "https://minecraft-server-list.com/server/391863/vote/",
+			"https://topg.org/Minecraft/in-457199", "https://minecraft-mp.com/server/154182/vote/#adbox_leaderboard",
+			"https://minecraft-tracker.com/server/4236/vote#adblock-notice", "https://www.planetminecraft.com/server/magnarisa/vote#center"]
+			var btnActiveStyle = "btn-primary";
+
+			function setURL(siteIndex){
+    			document.getElementById('siteView').src = siteLinks[Math.abs(sites.indexOf(siteIndex))];
+				setActive(siteIndex);
+			}
+			function setActive(siteIndex){
+				//loop thru array
+				sites.forEach((site, index) => {
+					//if classlist contains active
+					if (document.getElementById(site).classList.contains('btn-primary')) {
+						//remove
+						document.getElementById(site).classList.remove('btn-primary');
+					}
+					//if it is the input
+					if (site == siteIndex) {
+						//turn active
+						document.getElementById(siteIndex).classList.add('btn-primary');
+					}
+				});
 			}
 		</script>
 	</head>
@@ -65,22 +87,22 @@
   			<div class="container">
 				<div class="btn-group btn-group-justified" role="group" aria-label="...">
 				  	<div class="btn-group" role="group">
-				    	<button type="button" class="btn btn-default" onclick="setURL('https://minecraftservers.org/vote/426251#left')">1</button>
+				    	<button id="siteOne" type="button" class="btn btn-default btn-primary" onclick="setURL('siteOne')">1</button>
 				  	</div>
 				  	<div class="btn-group" role="group">
-				    	<button type="button" class="btn btn-default" onclick="setURL('https://minecraft-server-list.com/server/391863/vote/')">2</button>
+				    	<button id="siteTwo" type="button" class="btn btn-default" onclick="setURL('siteTwo')">2</button>
 				  	</div>
 				  	<div class="btn-group" role="group">
-				    	<button type="button" class="btn btn-default" onclick="setURL('https://topg.org/Minecraft/in-457199')">3</button>
+				    	<button id="siteThree" type="button" class="btn btn-default" onclick="setURL('siteThree')">3</button>
 				  	</div>
 					<div class="btn-group" role="group">
-				    	<button type="button" class="btn btn-default" onclick="setURL('https://minecraft-mp.com/server/154182/vote/#adbox_leaderboard')">4</button>
+				    	<button id="siteFour" type="button" class="btn btn-default" onclick="setURL('siteFour')">4</button>
 				  	</div>
 				  	<div class="btn-group" role="group">
-				    	<button type="button" class="btn btn-default" onclick="setURL('https://minecraft-tracker.com/server/4236/vote#adblock-notice')">5</button>
+				    	<button id="siteFive" type="button" class="btn btn-default" onclick="setURL('siteFive')">5</button>
 				  	</div>
 				  	<div class="btn-group" role="group">
-				    	<button type="button" class="btn btn-default" onclick="setURL('https://www.planetminecraft.com/server/magnarisa/vote#center')">6</button>
+				    	<button id="siteSix" type="button" class="btn btn-default" onclick="setURL('siteSix')">6</button>
 				  	</div>
 				</div>
 		  	</div>
