@@ -14,10 +14,12 @@
 			"https://topg.org/Minecraft/in-457199", "https://minecraft-mp.com/server/154182/vote/#adbox_leaderboard",
 			"https://minecraft-tracker.com/server/4236/vote#adblock-notice", "https://www.planetminecraft.com/server/magnarisa/vote#center"]
 			var btnActiveStyle = "btn-primary";
+			var siteCooldowns = [24, 24, 24, 24, 24, 24];
 
 			function setURL(siteIndex){
     			document.getElementById('siteView').src = siteLinks[Math.abs(sites.indexOf(siteIndex))];
 				setActive(siteIndex);
+				updateSinceClick(siteIndex);
 			}
 			function setActive(siteIndex){
 				//loop thru array
@@ -33,6 +35,19 @@
 						document.getElementById(siteIndex).classList.add('btn-primary');
 					}
 				});
+			}
+			function updateSinceClick(siteIndex) {
+				//if siteIndex is not valid
+				if(sites.indexOf(siteIndex) == -1) {return;}
+
+				//make variables
+				var nextTime = new Date();
+				nextTime.setTime(nextTime.getTime() + (siteCooldowns[sites.indexOf(siteIndex)]*60*60*1000));
+				var nextUTCTime = nextTime.toUTCString();
+
+				//make cookie
+				document.cookie = siteIndex + "=" + nextUTCTime + "; " + "expires=" + nextUTCTime;
+
 			}
 		</script>
 	</head>
