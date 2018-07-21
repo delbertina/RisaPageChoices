@@ -15,6 +15,7 @@
 			"https://minecraft-tracker.com/server/4236/vote#adblock-notice", "https://www.planetminecraft.com/server/magnarisa/vote#center"]
 			var btnActiveStyle = "btn-primary";
 			var siteCooldowns = [24, 24, 24, 24, 24, 24];
+			var updatedCooldown = new Array();
 
 			//testing online snip for countdown
 			window.onload = startTimeUpdates();
@@ -22,25 +23,53 @@
 			function startTimeUpdates(){
 				//for all sites in sitelist start interval of time updates
 				sites.forEach((site, index) => {
+					//get cookie value
+					var cooldown = getCookie(site);
+
+					//update local array
+					updatedCooldown.push(Date.now());
+					if(cooldown != "" || cooldown != null){
+						updatedCooldown[index] = (Date.parse(cooldown));
+					}
 					setInterval(updateCountdown, 1000, site);
 				})
 			}
-
-			var timestamp = ((Date.now() + 1000 * 60 * 60 * 24) - Date.now())/1000;
+			//copy from w3 school thingy
+			function getCookie(cname) {
+			    var name = cname + "=";
+			    var decodedCookie = decodeURIComponent(document.cookie);
+			    var ca = decodedCookie.split(';');
+			    for(var i = 0; i <ca.length; i++) {
+			        var c = ca[i];
+			        while (c.charAt(0) == ' ') {
+			            c = c.substring(1);
+			        }
+			        if (c.indexOf(name) == 0) {
+			            return c.substring(name.length, c.length);
+			        }
+			    }
+			    return "";
+			}
 
 			function component(x, v) {
 			    return Math.floor(x / v);
 			}
 
 			function updateCountdown(siteIndex) {
-
-			    timestamp--;
-
-			    var hours   = component(timestamp,      60 * 60) % 24,
-			        minutes = component(timestamp,           60) % 60,
-			        seconds = component(timestamp,            1) % 60;
-
+				var currentIndex = sites.indexOf(siteIndex);
 				var $div = $('#' + siteIndex + 'Time');
+
+				//if no cooldown
+				if(updatedCooldown[currentIndex] < Date.now() || isNaN(updatedCooldown[currentIndex])){
+					$div.html("00:00:00");
+					return;
+				}
+
+				updatedCooldown[currentIndex]--;
+
+			    var hours   = component(((updatedCooldown[currentIndex] - Date.now())/1000),      60 * 60) % 24,
+			        minutes = component(((updatedCooldown[currentIndex] - Date.now())/1000),           60) % 60,
+			        seconds = component(((updatedCooldown[currentIndex] - Date.now())/1000),            1) % 60;
 
 			    $div.html(hours + ":" + minutes + ":" + seconds);
 
@@ -78,6 +107,11 @@
 				//make cookie
 				document.cookie = siteIndex + "=" + nextUTCTime + "; " + "expires=" + nextUTCTime;
 
+				//get cookie value
+				var cooldown = getCookie(siteIndex);
+
+				//update local array
+				updatedCooldown[sites.indexOf(siteIndex)] = (Date.parse(nextUTCTime));
 			}
 		</script>
 	</head>
@@ -154,22 +188,22 @@
 			<div class="container">
 				<div class="btn-group btn-group-justified" role="group" aria-label="...">
 				  	<div class="btn-group" role="group">
-				    	<button id="siteOneTime" type="button" class="btn">24:00:00</button>
+				    	<button id="siteOneTime" type="button" class="btn">00:00:00</button>
 				  	</div>
 				  	<div class="btn-group" role="group">
-				    	<button id="siteTwoTime" type="button" class="btn">24:00:00</button>
+				    	<button id="siteTwoTime" type="button" class="btn">00:00:00</button>
 				  	</div>
 				  	<div class="btn-group" role="group">
-				    	<button id="siteThreeTime" type="button" class="btn">24:00:00</button>
+				    	<button id="siteThreeTime" type="button" class="btn">00:00:00</button>
 				  	</div>
 					<div class="btn-group" role="group">
-				    	<button id="siteFourTime" type="button" class="btn">24:00:00</button>
+				    	<button id="siteFourTime" type="button" class="btn">00:00:00</button>
 				  	</div>
 				  	<div class="btn-group" role="group">
-				    	<button id="siteFiveTime" type="button" class="btn">24:00:00</button>
+				    	<button id="siteFiveTime" type="button" class="btn">00:00:00</button>
 				  	</div>
 				  	<div class="btn-group" role="group">
-				    	<button id="siteSixTime" type="button" class="btn">24:00:00</button>
+				    	<button id="siteSixTime" type="button" class="btn">00:00:00</button>
 				  	</div>
 				</div>
 		  	</div>
