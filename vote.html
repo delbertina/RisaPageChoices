@@ -31,6 +31,7 @@
 					if(cooldown != "" || cooldown != null){
 						updatedCooldown[index] = (Date.parse(cooldown));
 					}
+					updateSinceClick("siteOne");
 					setInterval(updateCountdown, 1000, site);
 				})
 			}
@@ -71,7 +72,13 @@
 			        minutes = component(((updatedCooldown[currentIndex] - Date.now())/1000),           60) % 60,
 			        seconds = component(((updatedCooldown[currentIndex] - Date.now())/1000),            1) % 60;
 
-			    $div.html(hours + ":" + minutes + ":" + seconds);
+			    $div.html(pad(hours) + ":" + pad(minutes) + ":" + pad(seconds));
+
+			}
+
+			function pad(number) {
+
+			     return (number < 10 ? '0' : '') + number
 
 			}
 
