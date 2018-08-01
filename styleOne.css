@@ -13,3 +13,12 @@ body {
         background-color: maroon;
     }
 }
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none;
+}
