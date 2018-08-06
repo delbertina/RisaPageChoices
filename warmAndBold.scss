@@ -27,7 +27,7 @@ $embers-red-lighter: #fe491b;
 $embers-red-lightest: #fe9a80;
 
 // Testing variable overrides
-$body-bg: $gray-deep;
+$body-bg: $gray-dark;
 $body-color: #111;
 
 $theme-colors: (
@@ -43,6 +43,14 @@ $colors: (
 .custom-white-text {
     color: $clean-white;
 }
+
+.transparent{
+  background: $posy-purple-dark;
+}
+
+//cards
+$card-bg: $clean-white;
+$card-cap-bg: $gray-medium;
 
 //All of bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
