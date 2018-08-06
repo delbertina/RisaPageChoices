@@ -8,9 +8,12 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 		<link rel="stylesheet" type="text/css" href="styleOne.css">
-		<!--<script src="js/jquery.js"></script>
-		<link rel="stylesheet" href="css/bootstrap.css">
-		<script src="js/bootstrap.js"></script>-->
+		<!--<link rel="stylesheet" type="text/css" href="warmAndBold.min.css">-->
+		<!--Load style based on URL variable-->
+		<script>
+			if (window.location.search.indexOf('?style=warmAndBold') === 0)
+		    	document.write('<link rel="stylesheet" type="text/css" href="warmAndBold.min.css" />');
+		</script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
@@ -64,7 +67,7 @@
 	    <div class="container">
 
 	      <!-- Heading Row -->
-	      <div class="row my-4">
+	      <div class="row my-4 custom-white-text">
 	        <div class="col-lg-8">
 	          <img class="img-fluid rounded" src="http://placehold.it/900x400" alt="">
 	        </div>

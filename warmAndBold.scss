@@ -1,0 +1,48 @@
+//WarmAndBold.scss
+// Sass file for Warm and Bold theme in bootstrap
+
+//theme colors
+$clean-white: #dfdce3;
+$bold-black: #000000;
+$gray-dark: #262626;
+$gray-deep: #404040;
+$gray-medium: #595959;
+
+$ink-blue: #062f4f;
+$ink-blue-light: #094676;
+$ink-blue-lighter: #0d63a6;
+$ink-blue-lighterly: #2e98ef;
+$ink-blue-lightest: #89c6f6;
+
+$posy-purple: #813772;
+$posy-purple-dark: #59264f;
+$posy-purple-light: #7d356f;
+$posy-purple-lighter: #a1458e;
+$posy-purple-lightest: #ca82bb;
+
+$embers-red: #b82601;
+$embers-red-dark: #7f1a01;
+$embers-red-light: #e42f01;
+$embers-red-lighter: #fe491b;
+$embers-red-lightest: #fe9a80;
+
+// Testing variable overrides
+$body-bg: $gray-deep;
+$body-color: #111;
+
+$theme-colors: (
+  "primary": $ink-blue-light,
+  "secondary": $embers-red,
+  "danger": $posy-purple,
+);
+
+$colors: (
+  "white": $clean-white,
+);
+
+.custom-white-text {
+    color: $clean-white;
+}
+
+//All of bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
