@@ -1,0 +1,46 @@
+//Lavender Harvest.scss
+// Sass file for lavender harvest theme in bootstrap
+
+//theme colors
+$clean-white: #dfdce3;
+$bold-black: #000000;
+$gray-dark: #262626;
+$gray-deep: #404040;
+$gray-medium: #595959;
+$gray-light: #707070;
+
+$lavender-deep: #7d56aa;
+$lavender-light: #9a8bba;
+$lavender-gray: #b0a1af;
+$lavender-white: #e5d1d2;
+$sun-yellow: #e5c252;
+$sun-orange: #df9418;
+
+// Testing variable overrides
+$body-bg: $lavender-white;
+$body-color: $gray-deep;
+
+$theme-colors: (
+  "primary": $sun-orange,
+  "secondary": $sun-yellow,
+  "danger": $lavender-deep,
+);
+
+$colors: (
+  "white": $lavender-white,
+);
+
+.custom-white-text {
+    color: $gray-deep;
+}
+
+.transparent{
+  background: $lavender-deep;
+}
+
+//cards
+$card-bg: $sun-orange;
+$card-cap-bg: $sun-yellow;
+
+//All of bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";

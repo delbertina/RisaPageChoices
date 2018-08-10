@@ -1,0 +1,59 @@
+//FrenchElephant.scss
+// Sass file for French Elephant theme in bootstrap
+
+//theme colors
+$clean-white: #dfdce3;
+$sandy-blond: #f2e5d2;
+$bold-black: #000000;
+$gray-dark: #262626;
+$gray-deep: #404040;
+$gray-medium: #595959;
+$gray-light: #747474;
+
+$ink-blue: #01395e;
+$ink-blue-light: #094676;
+$ink-blue-lighter: #0d63a6;
+$ink-blue-lighterly: #2e98ef;
+$ink-blue-lightest: #89c6f6;
+
+$posy-purple: #813772;
+$deep-purple: #643056;
+$posy-purple-dark: #59264f;
+$posy-purple-light: #7d356f;
+$posy-purple-lighter: #a1458e;
+$posy-purple-lightest: #ca82bb;
+
+$embers-red: #b82601;
+$embers-red-dark: #7f1a01;
+$embers-red-light: #e42f01;
+$embers-red-lighter: #fe491b;
+$embers-red-lightest: #fe9a80;
+
+// Testing variable overrides
+$body-bg: $sandy-blond;
+$body-color: $clean-white;
+
+$theme-colors: (
+  "primary": $ink-blue-light,
+  "secondary": $gray-light,
+  "danger": $deep-purple,
+);
+
+$colors: (
+  "white": $clean-white,
+);
+
+.custom-white-text {
+    color: $gray-light;
+}
+
+.transparent{
+  background: $deep-purple;
+}
+
+//cards
+$card-bg: $deep-purple;
+$card-cap-bg: $gray-light;
+
+//All of bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";

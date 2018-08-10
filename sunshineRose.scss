@@ -1,0 +1,44 @@
+//SunshineRose.scss
+// Sass file for Sunshine Rose theme in bootstrap
+
+//theme colors
+$clean-white: #dfdce3;
+$bold-black: #000000;
+$gray-dark: #262626;
+$gray-deep: #404040;
+$gray-medium: #595959;
+$gray-light: #707070;
+
+$dusty-rose: #b6a19e;
+$aqua-blue: #6bbaa7;
+$sunshine-yellow: #fba100;
+$lavender-blue: #6c648b;
+
+// Testing variable overrides
+$body-bg: $dusty-rose;
+$body-color: #111;
+
+$theme-colors: (
+  "primary": $aqua-blue,
+  "secondary": $sunshine-yellow,
+  "danger": $lavender-blue,
+);
+
+$colors: (
+  "white": $clean-white,
+);
+
+.custom-white-text {
+    color: $bold-black;
+}
+
+.transparent{
+  background: $lavender-blue;
+}
+
+//cards
+$card-bg: $clean-white;
+$card-cap-bg: $gray-light;
+
+//All of bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
