@@ -13,12 +13,13 @@
 		<script src="js/bootstrap.js"></script>-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script>
-			var sites = ["siteOne", "siteTwo", "siteThree", "siteFour", "siteFive", "siteSix"];
+			var sites = ["siteOne", "siteTwo", "siteThree", "siteFour", "siteFive", "siteSix", "siteSeven"];
 			var siteLinks = ["https://minecraftservers.org/vote/426251#left", "https://minecraft-server-list.com/server/391863/vote/",
-			"https://topg.org/Minecraft/in-457199", "https://minecraft-mp.com/server/154182/vote/#adbox_leaderboard",
-			"https://minecraft-tracker.com/server/4236/vote#adblock-notice", "https://www.planetminecraft.com/server/magnarisa/vote#center"]
+			"https://top-minecraft-servers.com/server/magnarisa/", "https://topg.org/Minecraft/in-457199", 
+			"https://minecraft-mp.com/server/154182/vote/#adbox_leaderboard", "https://minecraft-tracker.com/server/4236/vote#adblock-notice", 
+			"https://www.planetminecraft.com/server/magnarisa/vote#center"]
 			var btnActiveStyle = "btn-primary";
-			var siteCooldowns = [24, 24, 24, 24, 24, 24];
+			var siteCooldowns = [24, 24, 24, 24, 24, 24, 24];
 			var updatedCooldown = new Array();
 
 			//testing online snip for countdown
@@ -181,21 +182,25 @@
 			    	<button id="siteTwo" type="button" class="btn btn-default col" onclick="setURL('siteTwo')">2</button>
 					<button id="siteTwoTime" type="button" class="btn btn-secondary col">00:00:00</button>
 			  	</div>
-			  	<div class="col-1">
+				<div class="col-1">
 			    	<button id="siteThree" type="button" class="btn btn-default col" onclick="setURL('siteThree')">3</button>
 					<button id="siteThreeTime" type="button" class="btn btn-secondary col">00:00:00</button>
 			  	</div>
-				<div class="col-1">
+			  	<div class="col-1">
 			    	<button id="siteFour" type="button" class="btn btn-default col" onclick="setURL('siteFour')">4</button>
 					<button id="siteFourTime" type="button" class="btn btn-secondary col">00:00:00</button>
 			  	</div>
-			  	<div class="col-1">
+				<div class="col-1">
 			    	<button id="siteFive" type="button" class="btn btn-default col" onclick="setURL('siteFive')">5</button>
 					<button id="siteFiveTime" type="button" class="btn btn-secondary col">00:00:00</button>
 			  	</div>
 			  	<div class="col-1">
 			    	<button id="siteSix" type="button" class="btn btn-default col" onclick="setURL('siteSix')">6</button>
 					<button id="siteSixTime" type="button" class="btn btn-secondary col">00:00:00</button>
+			  	</div>
+			  	<div class="col-1">
+			    	<button id="siteSeven" type="button" class="btn btn-default col" onclick="setURL('siteSeven')">7</button>
+					<button id="siteSevenTime" type="button" class="btn btn-secondary col">00:00:00</button>
 			  	</div>
 		  	</div>
 		<div class="row align-items-center justify-content-md-center" style="margin-bottom:50px;">
