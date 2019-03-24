@@ -93,6 +93,9 @@
 				setActive(siteIndex);
 				updateSinceClick(siteIndex);
 			}
+			function openNewTab(){
+				window.open(document.getElementById('siteView').src,'_blank')
+			}
 			function setActive(siteIndex){
 				//loop thru array
 				sites.forEach((site, index) => {
@@ -204,6 +207,11 @@
 					<button id="siteSevenTime" type="button" class="btn btn-secondary col">00:00:00</button>
 			  	</div>
 		  	</div>
+			<div class="row justify-content-md-center align-items-center" style="margin-top:1vh;margin-bottom:1vh;">
+				<div class="col-2">
+			    	<button id="newPageLoader" type="button" class="btn btn-default col" onclick="openNewTab()">Not Loading?</button>
+				</div>
+			</div>
 		<div class="row align-items-center justify-content-md-center" style="margin-bottom:50px;">
 			<div class="col-8">
 				<iframe id="siteView" src="https://minecraftservers.org/vote/426251#left" style="width: 66vw;height: 66vh;position: relative;"></iframe>
